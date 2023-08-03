@@ -1,3 +1,5 @@
+  name: workflow_dispatch
+  
   workflow_dispatch:
     inputs:
       environment:
