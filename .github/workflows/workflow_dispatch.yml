@@ -1,5 +1,5 @@
-  name: workflow_dispatch
-  
+ name: workflow_dispatch
+
   workflow_dispatch:
     inputs:
       environment:
@@ -7,7 +7,7 @@
         type: environment
         required: true
         
-  Test:
+   Test:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch'
     needs: Build
@@ -47,4 +47,5 @@
           sleep 10
       - run: |
           echo "🚀 Step 5..."
-          sleep 10        
+          sleep 10       
+  
