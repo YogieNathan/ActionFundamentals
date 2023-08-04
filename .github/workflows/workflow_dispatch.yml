@@ -7,6 +7,9 @@
         type: environment
         required: true
         
+   steps:
+   - uses: actions/checkout@v1
+        
    Test:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch'
@@ -47,5 +50,18 @@
           sleep 10
       - run: |
           echo "🚀 Step 5..."
-          sleep 10       
-  
+          sleep 10  
+          
+ 
+   lint:
+   
+     runs-on: ubuntu-latest
+     steps:
+     - uses: actions/checkout@v1
+     
+     - name: Super-Linter
+     # You may pin to the exact commit or the version.
+     # uses: super-linter/super-linter@ddb1589d626557e4703a24d2f5b97fbbfdb59b59
+       uses: super-linter/super-linter@v5.2.0
+       env:
+         GIHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
