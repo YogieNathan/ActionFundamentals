@@ -1,4 +1,4 @@
- name: workflow_dispatch
+  name: workflow_dispatch
 
   workflow_dispatch:
     inputs:
@@ -7,10 +7,10 @@
         type: environment
         required: true
         
-   steps:
+  steps:
    - uses: actions/checkout@v1
         
-   Test:
+  Test:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch'
     needs: Build
@@ -52,7 +52,6 @@
           echo "🚀 Step 5..."
           sleep 10  
           
- 
    lint:
    
      runs-on: ubuntu-latest
